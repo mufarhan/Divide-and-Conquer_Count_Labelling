@@ -23,6 +23,6 @@ To construct index:
 
 To query index:
 
-    $ ./index index_file_name query_file_name
+    $ ./query index_file_name query_file_name
 
 `Sample Datasets/` folder provides a sample graph and a sample file containing query pairs

@@ -1,4 +1,4 @@
-# Divide-and-Conquer Labelling (DHL) 
+# Divide-and-Conquer Labelling (DCL) 
 
 A tool to speed up shortest path counting queries on large road networks, 
 It consists of the following main files:

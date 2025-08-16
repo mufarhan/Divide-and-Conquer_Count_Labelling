@@ -26,3 +26,7 @@ To query index:
     $ ./query index_file_name query_file_name
 
 `Sample Datasets/` folder provides a sample graph and a sample file containing query pairs
+
+# References
+
+* Muhammad Farhan, Henning Koehler, and Qing Wang, **[Divide-and-Conquer: Scalable Shortest Path Counting on Large Road Networks](https://dl.acm.org/doi/pdf/10.1145/3725400)**. SIGMOD 2025.

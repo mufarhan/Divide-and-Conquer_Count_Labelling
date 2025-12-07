@@ -9,7 +9,7 @@ using namespace road_network;
 
 const size_t MB = 1024 * 1024;
 
-int main(int argc, char** argv)
+int main([[maybe_unused]]int argc, char** argv)
 {
 
      // read graph

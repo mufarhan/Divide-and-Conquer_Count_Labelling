@@ -3,8 +3,7 @@
 # Define the list of region codes for the road networks
 # Assumes the graph files have been unzipped and are available (e.g., USA-road-d.USA.gr)
 REGIONS=(
-    "USA" "CTR" "W" "E" "LKS" "CAL" 
-    "NE" "NW" "FLA" "COL" "BAY" "NY"
+    "BAY" "NY"
 )
 
 # The path to your compiled query generation binary
@@ -32,7 +31,8 @@ echo "Query files will be saved in the '$OUTPUT_DIR' directory."
 echo "-------------------------------------------------------"
 
 for region in "${REGIONS[@]}"; do
-    INPUT_FILE="${INPUT_DIR}/USA-road-d.${region}.gr"
+    # INPUT_FILE="${INPUT_DIR}/USA-road-d.${region}.gr"
+    INPUT_FILE="USA-road-d.${region}.gr"
     # Output prefix will result in files like queries/USA_random_pairs.txt
     OUTPUT_PREFIX="${OUTPUT_DIR}/${region}"
 

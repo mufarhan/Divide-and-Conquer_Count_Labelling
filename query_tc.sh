@@ -2,8 +2,7 @@
 
 # --- Configuration ---
 REGIONS=(
-    "USA" "CTR" "W" "E" "LKS" "CAL" 
-    "NE" "NW" "FLA" "COL" "BAY" "NY"
+    "BAY" "NY"
 )
 
 # Define the query file types/suffixes (1 random + 10 distance-bucketed)
@@ -13,7 +12,7 @@ for i in {0..9}; do
 done
 
 # Binary names and directories
-TC_QUERY_BIN="./TreeCount/src/TC_query"
+TC_QUERY_BIN="./TreeCount/TC_query"
 INDEX_DIR="tc_indexes"
 INDEX_SUFFIX=".tc_idx"
 QUERY_DIR="queries"

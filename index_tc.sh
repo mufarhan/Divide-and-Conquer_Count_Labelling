@@ -1,17 +1,12 @@
-# Installing at ./TreeCount/src/TC_index and ./TreeCount/src/TC_query
-git clone https://github.com/uniooo/TreeCount
-(cd TreeCount/src && make clean && make)
-Indexing (TreeCount)
-
 #!/bin/bash
 
 # --- Configuration ---
 REGIONS=(
-    "USA" "CTR" "W" "E" "LKS" "CAL" 
-    "NE" "NW" "FLA" "COL" "BAY" "NY"
+    "BAY" "NY"
 )
+
 # Path to the TreeCount indexer binary
-TC_INDEXER="./TreeCount/src/TC_index"
+TC_INDEXER="./TreeCount/TC_index"
 # Directory to store the baseline TreeCount indexes
 OUTPUT_DIR="tc_indexes"
 # ---------------------

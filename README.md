@@ -1,4 +1,3 @@
-````markdown
 # Divide and Conquer Labelling (DCL) and TreeCount
 
 This repository provides the implementation of Divide and Conquer Labelling (DCL), a method for accelerating shortest-path counting queries on large road networks. A baseline method, TreeCount, is included for comparison.

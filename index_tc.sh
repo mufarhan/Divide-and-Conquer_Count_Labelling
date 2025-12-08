@@ -28,7 +28,7 @@ echo "TreeCount index files will be saved in the '$OUTPUT_DIR' directory."
 echo "--------------------------------------------------------"
 
 for region in "${REGIONS[@]}"; do
-    GRAPH_FILE="USA-road-d.${region}.gr"
+    GRAPH_FILE="../USA-road-d.${region}.gr"
     # Use a distinct suffix for TC indexes
     INDEX_FILE="${OUTPUT_DIR}/USA-road-d.${region}.tc_idx" 
     

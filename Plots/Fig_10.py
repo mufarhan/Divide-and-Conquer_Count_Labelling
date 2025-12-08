@@ -7,9 +7,6 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-#plt.rc('text', usetex=True)
-#plt.rc('font', family='serif')
-
 x_axis_labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 x_tick_labels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 
@@ -17,9 +14,6 @@ x_axis_values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 y_axis_values_1 = [[0.715992, 0.795294, 0.828832, 0.826338, 0.761321, 0.704886, 0.616627, 0.48182, 0.376908, 0.315895],
 [1.751156, 1.758708, 1.745176, 1.727220, 1.660010, 1.446586, 1.310104, 1.141747, 0.987574, 0.946308]]
-
-#y_axis_values_2 = [[0.602832, 0.670689, 0.697258, 0.679039, 0.613368, 0.618456, 0.538448, 0.460142, 0.415862, 0.400689],
-#[1.607214, 1.617004, 1.611197, 1.589709, 1.547797, 1.353916, 1.231154, 1.092347, 1.068864, 0.964659]]
 
 y_axis_values_3 = [[0.735393, 0.824023, 0.81756, 0.755751, 0.765541, 0.851117, 0.771198, 0.604875, 0.50512, 0.449319],
 [1.608356, 1.621827, 1.632712, 1.708633, 1.717539, 1.355979, 1.070859, 1.086458, 1.163436, 1.153413]]
@@ -57,11 +51,11 @@ y_axis_values_13 = [[2.01478, 2.03641, 2.07799, 2.03012, 1.91336, 1.7999, 1.6439
 
 label_list = [r'DCL', r'TL']
 
-color_list = ['b', 'r', 'g']
-line_style = ['o-', '<-', 's--']
+color_list = ['b', 'r']
+line_style = ['o-', '<-']
 
-#color_list = ['g', 'b', 'orange', 'r', 'magenta', 'grey']
-#line_style = ['o-', 's--', 'v:', 'd--', '<-', '*:', 'p-']
+#color_list = ['g', 'b']
+#line_style = ['o-', 's--']
 
 
 plt.figure(figsize=(20,6))
@@ -79,9 +73,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_1) ):
   plt.plot(x_axis_values, y_axis_values_1[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=0.8)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -98,9 +89,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_3) ):
   plt.plot(x_axis_values, y_axis_values_3[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=1.0)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -117,9 +105,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_4) ):
   plt.plot(x_axis_values, y_axis_values_4[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=1.0)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -137,9 +122,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_5) ):
   plt.plot(x_axis_values, y_axis_values_5[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=1.2)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -157,9 +139,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_6) ):
   plt.plot(x_axis_values, y_axis_values_6[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=1.4)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -177,9 +156,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_7) ):
   plt.plot(x_axis_values, y_axis_values_7[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=1.6)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -198,9 +174,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_8) ):
   plt.plot(x_axis_values, y_axis_values_8[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=2.25)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -218,9 +191,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_9) ):
   plt.plot(x_axis_values, y_axis_values_9[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=2.25)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -238,9 +208,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_10) ):
   plt.plot(x_axis_values, y_axis_values_10[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=3.0)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -258,9 +225,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_11) ):
   plt.plot(x_axis_values, y_axis_values_11[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=3.0)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -278,9 +242,6 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_12) ):
   plt.plot(x_axis_values, y_axis_values_12[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=3.0)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
@@ -298,18 +259,11 @@ plt.setp(labels)
 
 for i in range( len(y_axis_values_13) ):
   plt.plot(x_axis_values, y_axis_values_13[i], line_style[i], markersize = 9, color = color_list[i], label=label_list[i], linewidth = 1)
-  #plt.yscale('log')
-
-#plt.ylim(ymin=0, ymax=3.0)
 
 locs, labels = plt.xticks(fontsize=14)
 locs, labels = plt.yticks(fontsize=14)
 
 plt.legend(loc= 'upper right', prop={'size':14})
-
-#plt.legend(loc= 'lower right', prop={'size':14})
-#plt.legend(bbox_to_anchor= (-1.4, 2.7), ncol=3, fontsize=20)
-#plt.legend(loc='best', bbox_to_anchor= (-1.8, 2.9), ncol=3,borderaxespad=0, frameon=True, fontsize=22)
 
 plt.tight_layout()
 plt.savefig('query_with_varyingdistance_traveltimes.pdf', bbox_inches='tight')

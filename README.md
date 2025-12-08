@@ -58,9 +58,6 @@ Use:
 
 to compile and run DCL and TreeCount on the same dataset.
 
-```
-```
-
 # Datasets
 
  Real road networks used in this paper can be found at http://www.diag.uniroma1.it/~challenge9/download.shtml

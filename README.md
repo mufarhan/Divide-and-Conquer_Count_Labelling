@@ -25,7 +25,7 @@ Runs both DCL and TreeCount for comparative evaluation.
 From the `src/` directory:
 ```bash
 make
-````
+```
 
 ## Usage
 

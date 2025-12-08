@@ -11,7 +11,6 @@ x_tick_labels = ['1', '2', '3', '4', '5', '6', '7', '8']
 x_axis_values = [1, 2,	3,	4,	5,	6,	7,	8]
 
 y_axis_values = [[0.604466, 0.371356, 0.272045, 0.221366, 0.192957, 0.167887, 0.153239, 0.147795],
-#[0.451283, 0.287176, 0.217401, 0.181463, 0.15307, 0.145717, 0.135385, 0.125217],
 [0.691418, 0.428351, 0.320645, 0.26603, 0.234299, 0.214504, 0.198843, 0.190801],
 [2.0035, 1.21796, 0.877157, 0.702703, 0.6017, 0.538009, 0.489509, 0.453528],
 [2.08651, 1.24419, 0.899062, 0.701846, 0.62135, 0.540773, 0.495412, 0.463137],
@@ -33,7 +32,6 @@ plt.figure(figsize=(3.5,3))
 
 handles = []
 
-#plt.title('Twitter', fontsize=17)
 plt.xlabel("# of Cores", fontsize=11)
 plt.ylabel("Construction Time (sec.)", fontsize=11)
 
@@ -46,7 +44,6 @@ for i in range(len(y_axis_values)):
   plt.yscale('log')
 
 plt.figlegend(handles, label_list, bbox_to_anchor=(1.2, 0.98), prop={'size':8}, ncol=1)
-#plt.legend(loc= 'upper left', prop={'size':9}, ncol=3, frameon=1)
 locs, labels = plt.xticks(fontsize=9)
 locs, labels = plt.yticks(fontsize=9)
 

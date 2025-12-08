@@ -1,31 +1,66 @@
-# Divide-and-Conquer Labelling (DCL) 
+````markdown
+# Divide and Conquer Labelling (DCL) and TreeCount
 
-A tool to speed up shortest path counting queries on large road networks, 
-It consists of the following main files:
+This repository provides the implementation of Divide and Conquer Labelling (DCL), a method for accelerating shortest-path counting queries on large road networks. A baseline method, TreeCount, is included for comparison.
 
-* road_network.h / road_network.cpp: core library
-* util.h / util.cpp: library with additional tools
+## Repository Structure
 
-Additional files are:
+**src/**  
+Contains the DCL implementation:  
+• `road_network.h/.cpp` – core graph library  
+• `util.h/.cpp` – utility functions  
+• `index.cpp` – builds a DCL index  
+• `query.cpp` – loads an index and answers queries
 
-* index.cpp: create an index file
-* query.cpp: load index from a file and evaluate random queries
+**TreeCount/**  
+Baseline TreeCount implementation and scripts.
 
-# Usage
+**Sample Datasets/**  
+Example graph and query-pair files.
 
-To compile the source in `src/`
+**main.sh**  
+Runs both DCL and TreeCount for comparative evaluation.
 
-    $ make
+## Compilation
 
-To construct index:
+From the `src/` directory:
+```bash
+make
+````
 
-    $ ./index graph_file_name index_file_name
+## Usage
 
-To query index:
+### Build a DCL index
 
-    $ ./query index_file_name query_file_name
+```bash
+./index <graph_file> <index_file>
+```
 
-`Sample Datasets/` folder provides a sample graph and a sample file containing query pairs
+### Query using a DCL index
+
+```bash
+./query <index_file> <query_file>
+```
+
+Sample data is provided in `Sample Datasets/`.
+
+## Datasets
+
+Real-world road networks used in the project can be downloaded from:
+[http://www.diag.uniroma1.it/~challenge9/download.shtml](http://www.diag.uniroma1.it/~challenge9/download.shtml)
+
+## Running Both Methods
+
+Use:
+
+```bash
+./main.sh
+```
+
+to compile and run DCL and TreeCount on the same dataset.
+
+```
+```
 
 # Datasets
 

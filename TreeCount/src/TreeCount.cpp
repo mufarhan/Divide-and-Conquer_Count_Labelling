@@ -58,5 +58,6 @@ int main(int argc, char *argv[]) {
         return 0;
     }
   }
+
   exe(graph_filename, index_filename);
 }

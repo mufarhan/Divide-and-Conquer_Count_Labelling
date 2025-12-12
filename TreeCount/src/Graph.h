@@ -23,6 +23,8 @@ class Graph {
   Graph(const char* file);
   void ReadGraph(const char* file);
   void ReadWeightedGraph(const char* file);
+  void ReadGraph(std::istream &in);
+  void ReadWeightedGraph(std::istream &in);
   bool isEdgeExist(int u, int v);
   void insertEdge(int u, int v, int w);
   void deleteEdge(int u, int v);

@@ -1,11 +1,11 @@
 # Prepare dataset and queries
-make
-bash download.sh
-bash generate_query.sh
+#make
+#bash download.sh
+#bash generate_query.sh
 
 # DCL
-bash index_dcl.sh
-bash query_dcl.sh
+#bash index_dcl.sh
+#bash query_dcl.sh
 
 # TC
 make -C TreeCount

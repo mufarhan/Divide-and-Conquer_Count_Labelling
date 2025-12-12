@@ -37,14 +37,14 @@ int main(int argc, char** argv)
     if (!ifs.is_open())
     {
         cerr << "Error: Could not open graph file: " << graph_file_path << endl;
-        return 1;
+	return 1;
     }
     Graph g;
     util::start_timer();
     read_graph(g, ifs);
     ifs.close();
     // FIX: Changed 'g.num_nodes()' to 'g.get_nodes()' based on compiler suggestion.
-    cout << "Graph loaded with " << g.get_nodes() << " nodes in " << util::stop_timer() << "s" << endl;
+    //cout << "Graph loaded with " << g.get_nodes() << " nodes in " << util::stop_timer() << "s" << endl;
 
 
     // 2. Prepare the ContractionIndex required for distance bucketing (Task B)

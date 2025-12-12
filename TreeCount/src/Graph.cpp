@@ -35,6 +35,41 @@ void Graph::ReadGraph(const char* file) {
   printf("Read Graph OK!\nn = %d, m = %d\n", n_, m_);
 }
 
+void Graph::ReadGraph(std::istream &in) {
+  char line_id;
+  uint32_t u, v, w;
+
+  while (in >> line_id) {
+    switch (line_id)
+    {
+    case 'p':
+        in.ignore(3);
+        in >> n_;
+        in.ignore(1000, '\n');
+        for (int i = 0; i <= n_; ++i) {  // set up the vertices, each vertex
+                                  // is a map of (incident vertex v, dis)
+          std::map<int, int> vec;
+          vec.clear();
+          E_.push_back(vec);
+        }
+        break;
+    case 'a':
+        in >> u >> v >> w;
+        assert(u <= n_ && v <= n_);
+        E_[u].insert(std::make_pair(v, 1));
+        E_[v].insert(std::make_pair(u, 1));
+        break;
+    default:
+        in.ignore(1000, '\n');
+    }
+  }
+  D_.clear();
+  D_.push_back(0);  // vertex id starts from 1
+  for (int i = 1; i <= n_; ++i) { D_.push_back(E_[i].size()); m_ += E_[i].size(); }
+
+  printf("Read Weighted Graph OK!\nn = %d, m = %d\n", n_, m_);
+}
+
 void Graph::ReadWeightedGraph(const char* file) {
   FILE* fin = fopen(file, "r");
   fscanf(fin, "%d", &n_);
@@ -64,6 +99,45 @@ void Graph::ReadWeightedGraph(const char* file) {
     fclose(fin);
     fin = NULL;
   }
+  printf("Read Weighted Graph OK!\nn = %d, m = %d\n", n_, m_);
+}
+
+void Graph::ReadWeightedGraph(std::istream &in) {
+  char line_id;
+  uint32_t u, v, w;
+
+  while (in >> line_id) {
+    switch (line_id)
+    {
+    case 'p':
+        in.ignore(3);
+        in >> n_;
+        in.ignore(1000, '\n');
+        for (int i = 0; i <= n_; ++i) {  // set up the vertices, each vertex
+                                  // is a map of (incident vertex v, dis)
+          std::map<int, int> vec;
+          vec.clear();
+          E_.push_back(vec);
+        }
+        break;
+    case 'a':
+        in >> u >> v >> w;
+        assert(u <= n_ && v <= n_);
+        if (E_[u].find(v) != E_[u].end()) {
+          if (E_[u][v] > w) E_[u][v] = E_[v][u] = w;
+        } else {
+          E_[u].insert(std::make_pair(v, w));
+          E_[v].insert(std::make_pair(u, w));
+        }
+        break;
+    default:
+        in.ignore(1000, '\n');
+    }
+  }
+  D_.clear();
+  D_.push_back(0);  // vertex id starts from 1
+  for (int i = 1; i <= n_; ++i) { D_.push_back(E_[i].size()); m_ += E_[i].size(); }
+
   printf("Read Weighted Graph OK!\nn = %d, m = %d\n", n_, m_);
 }
 

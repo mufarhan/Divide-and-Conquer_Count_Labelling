@@ -11,11 +11,19 @@ TreeDecomp::TreeDecomp() {
 TreeDecomp::TreeDecomp(const char* filein, const char* fileout) : TreeDecomp() {
   G_ = Graph();
 
+  std::ifstream in(filein);
 #ifndef WEIGHTED_GRAPH_
+  G_.ReadGraph(in);
+#else
+  G_.ReadWeightedGraph(in);
+#endif
+  in.close();
+
+/*#ifndef WEIGHTED_GRAPH_
   G_.ReadGraph(filein);
 #else
   G_.ReadWeightedGraph(filein);
-#endif
+#endif*/
 
   fout_ = fopen(fileout, "wb");
 
@@ -937,20 +945,15 @@ void TreeQuery::HopSizeCount(const char* queryfile) {
 
 }
 
-void TreeQuery::QueryTest(const char* queryfile, const char* resultfile) {
+/*void TreeQuery::QueryTest(const char* queryfile, const char* resultfile) {
   FILE* fin = fopen(queryfile, "r");
   FILE* fout = fopen(resultfile, "w");
 
   int num_queries = 0;  // number of testcases;
-  if (fscanf(fin, "%d", &num_queries) != 1)
-    printf("wrong input: num_queries\n");
-  fprintf(fout, "%d\n", num_queries);
-  vector<pair<int, int>> queries;
-  for (int i = 0; i < num_queries; ++i) {
-    int a, b;
-    if (fscanf(fin, "%d %d", &a, &b) != 2)
-      printf("wrong input: no enough query data\n");
+  vector<pair<int, int>> queries; int a, b;
+  while ( fscanf(fin, "%d %d", &a, &b) == 2 ) {
     queries.push_back({a, b});
+    num_queries++;
   }
   fclose(fin);
   fin = NULL;
@@ -971,6 +974,57 @@ void TreeQuery::QueryTest(const char* queryfile, const char* resultfile) {
   }
   fclose(fout);
   fout = NULL;
+}*/
+
+void TreeQuery::QueryTest(const char* queryfile, const char* resultfile) {
+    FILE* fin = fopen(queryfile, "r");
+    if (!fin) {
+        perror("Failed to open queryfile");
+        return;
+    }
+
+    FILE* fout = fopen(resultfile, "w");
+    if (!fout) {
+        perror("Failed to open resultfile");
+        fclose(fin);
+        return;
+    }
+
+    int num_queries = 0;
+    vector<pair<int, int>> queries;
+    int a, b;
+
+    while (fscanf(fin, "%d %d", &a, &b) == 2) {
+        queries.emplace_back(a, b);
+        num_queries++;
+    }
+    fclose(fin);
+
+    if (num_queries == 0) {
+        printf("No queries found.\n");
+        fclose(fout);
+        return;
+    }
+
+    vector<count_t> results;
+    results.reserve(num_queries);
+
+    const auto beg = std::chrono::steady_clock::now();
+    for (const auto& query : queries) {
+        count_t count = 0;
+        DistanceCountQuery(query.first, query.second, count);
+        results.push_back(count);
+    }
+    const auto end = std::chrono::steady_clock::now();
+
+    double avg_us = std::chrono::duration<double, std::micro>(end - beg).count() / num_queries;
+    printf("Query costs %f micro seconds in average\n", avg_us);
+
+    for (const auto& result : results) {
+        fprintf(fout, "%lld\n", (long long)result);  // or correct format for count_t
+    }
+
+    fclose(fout);
 }
 
 void TreeQuery::PrintIndex(const char* index_file) {

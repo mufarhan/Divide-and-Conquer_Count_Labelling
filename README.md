@@ -53,7 +53,7 @@ Real-world road networks used in the project can be downloaded from:
 Use:
 
 ```bash
-./main.sh
+sh main.sh
 ```
 
 to compile and run DCL and TreeCount on the same dataset.

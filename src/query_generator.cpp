@@ -58,6 +58,8 @@ int main(int argc, char** argv)
     // Create Cut Index
     vector<CutIndex> ci_cut;
     // Assuming a reasonable parameter like 0.2, as in your example
+    ContractionHierarchy ch;
+    g.create_sc_graph(ch, ci_cut, closest);
     g.create_cut_index(ci_cut, 0.2); 
     g.reset(); // Reset to original graph state
 

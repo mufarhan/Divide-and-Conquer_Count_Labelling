@@ -2,8 +2,7 @@
 
 # --- Configuration ---
 REGIONS=(
-    "USA" "CTR" "W" "E" "LKS" "CAL" 
-    "NE" "NW" "FLA" "COL" "BAY" "NY"
+    "NY"
 )
 # ---------------------
 
@@ -19,7 +18,7 @@ fi
 
 for region in "${REGIONS[@]}"; do
     GRAPH_FILE="USA-road-d.${region}.gr"
-    INDEX_FILE="USA-road-d.${region}.idx" 
+    INDEX_FILE="USA-road-d.${region}.idx_dcl" 
     
     echo "📂 Processing region: ${region}"
     

@@ -3,7 +3,8 @@
 # Define the list of region codes for the road networks
 # Assumes the graph files have been unzipped and are available (e.g., USA-road-d.USA.gr)
 REGIONS=(
-    "NY"
+    "USA" "CTR" "W" "E" "LKS" "CAL" 
+    "NE" "NW" "FLA" "COL" "BAY" "NY"
 )
 
 # The path to your compiled query generation binary

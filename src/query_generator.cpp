@@ -62,6 +62,8 @@ int main(int argc, char** argv)
     g.reset(); // Reset to original graph state
 
     // The ContractionIndex object for distance lookups
+    ContractionHierarchy ch;
+    g.create_sc_graph(ch, ci_cut, closest);
     ContractionIndex con_index(ci_cut, closest);
     
     cout << "Index components prepared in " << util::stop_timer() << "s" << endl;

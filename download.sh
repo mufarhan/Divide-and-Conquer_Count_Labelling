@@ -5,8 +5,7 @@ BASE="http://www.diag.uniroma1.it/~challenge9/data/USA-road-d"
 
 # List of region codes derived from your links
 REGIONS=(
-    "USA" "CTR" "W" "E" "LKS" "CAL" 
-    "NE" "NW" "FLA" "COL" "BAY" "NY"
+    "NY"
 )
 
 echo "Starting download and extraction of ${#REGIONS[@]} files..."

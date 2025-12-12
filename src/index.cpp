@@ -35,9 +35,16 @@ int main([[maybe_unused]]int argc, char** argv)
     cout << "created index of size " << con_index.size() / MB << " MB in " << util::stop_timer() << "s" << endl;
 
     // write index
-    ofstream ofs(string(argv[2]) + string("_dcl"));
+    ofstream ofs(argv[2]);
     con_index.write(ofs);
     ofs.close();
+
+    vector<vector<pair<NodeID,NodeID>>> buckets(10);
+
+    util::start_timer();
+    // Call the user's function to fill the buckets
+    g.random_pairs(buckets, 1000, 10000, con_index);
+    cout << "\nFinished generating all bucketed queries in " << util::stop_timer() << "s" << endl;
 
     return 0;
 }

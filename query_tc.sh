@@ -2,8 +2,7 @@
 
 # --- Configuration ---
 REGIONS=(
-    "USA" "CTR" "W" "E" "LKS" "CAL" 
-    "NE" "NW" "FLA" "COL" "BAY" "NY"
+    "NY"
 )
 
 # Define the query file types/suffixes (1 random + 10 distance-bucketed)

@@ -12,7 +12,7 @@ const size_t nr_queries = 1000000;
 int main([[maybe_unused]]int argc, char** argv)
 {
 
-    ifstream ifs(string(argv[1]) + string("_dcl"));
+    ifstream ifs(argv[1]);
     ContractionIndex con_index(ifs);
     ifs.close();
 

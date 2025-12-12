@@ -2,7 +2,8 @@
 
 # --- Configuration ---
 REGIONS=(
-    "NY"
+    "USA" "CTR" "W" "E" "LKS" "CAL" 
+    "NE" "NW" "FLA" "COL" "BAY" "NY"
 )
 
 # Path to the TreeCount indexer binary

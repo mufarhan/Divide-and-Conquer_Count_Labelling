@@ -28,6 +28,7 @@ int main([[maybe_unused]]int argc, char** argv)
     for (pair<NodeID, NodeID> q : queries)
         con_index.get_spc(q.first, q.second);
     cout << "ran " << queries.size() << " random queries in " << util::stop_timer() << "s" << endl;
+    cout << "Max Separator Size. (d'): " << con_index.max_cut_size() << "\nMax. Label Size (c): " << con_index.max_label_count() << endl;
 
     return 0;
 }

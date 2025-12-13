@@ -793,9 +793,9 @@ void TreeQuery::ReadIndex(const char* index_file) {
     fclose(findex_);
     findex_ = NULL;
   }
-  printf("tree height: %d\n", tree_height_);
+  printf("tree height (h): %d\n", tree_height_);
 #ifndef OMIT_POS_LIST_
-  printf("tree width: %d\n", tree_width_);
+  printf("tree width (w): %d\n", tree_width_);
 #endif  // !OMIT_POS_LIST_
 }
 
@@ -1082,3 +1082,4 @@ void TreeQuery::InitLOG() {
     LOGD[i] = j;
   }
 }
+

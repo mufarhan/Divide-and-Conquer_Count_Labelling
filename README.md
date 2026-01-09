@@ -22,7 +22,7 @@ Runs both DCL and TreeCount for comparative evaluation.
 
 ## Compilation
 
-From the `src/` directory:
+From the main directory:
 ```bash
 make
 ```

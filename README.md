@@ -43,11 +43,6 @@ make
 
 Sample data is provided in `Sample Datasets/`.
 
-## Datasets
-
-Real-world road networks used in the project can be downloaded from:
-[http://www.diag.uniroma1.it/~challenge9/download.shtml](http://www.diag.uniroma1.it/~challenge9/download.shtml)
-
 ## Running Both Methods
 
 Use:
